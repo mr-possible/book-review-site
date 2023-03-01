@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * One User can have one or many BookReviews.
+     */
+    public function bookReviews()
+    {
+        return $this->hasMany(BookReviewModel::class);
+    }
 }

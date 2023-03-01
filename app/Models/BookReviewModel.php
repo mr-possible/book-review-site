@@ -19,4 +19,18 @@ class BookReviewModel extends Model
         'book_review_upvotes',
         'book_review_downvotes',
     ];
+
+    /**
+     * One Book Review belongs to one book.
+     */
+    public function book() {
+        return $this->belongsTo(BookModel::class);
+    }
+
+    /**
+     * One Book Review belongs to one User.
+     */
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

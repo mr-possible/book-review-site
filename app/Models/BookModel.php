@@ -19,4 +19,11 @@ class BookModel extends Model
         'book_language',
         'book_price'
     ];
+
+    /**
+     * One book could have one or many reviews.
+     */
+    public function reviews() {
+        return $this->hasMany(BookReviewModel::class);
+    }
 }
