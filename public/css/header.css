@@ -1,0 +1,39 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav__logo a {
+  color: #222;
+  text-decoration: none;
+}
+
+.nav__links a {
+  color: #666;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav__links a:hover {
+  color: #222;
+}
