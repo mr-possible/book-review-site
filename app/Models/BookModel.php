@@ -24,6 +24,6 @@ class BookModel extends Model
      * One book could have one or many reviews.
      */
     public function reviews() {
-        return $this->hasMany(BookReviewModel::class);
+        return $this->hasMany(BookReviewModel::class, 'book_id');
     }
 }
