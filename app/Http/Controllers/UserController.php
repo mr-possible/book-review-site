@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function index() {
         $usernames = User::all()->pluck('name');
-        return $usernames;
+        return view('users.index', ['usernames' => $usernames]);
     }
 }
