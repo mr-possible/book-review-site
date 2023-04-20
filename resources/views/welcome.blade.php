@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h5 class="card-title">Search a Book</h5>
                 <p class="card-text">Find and search for books in our extensive library collection.</p>
-                <a href="#" class="btn btn-primary">Search</a>
+                <a href="/searchbook" class="btn btn-primary">Search</a>
             </div>
             </div>
         </div>

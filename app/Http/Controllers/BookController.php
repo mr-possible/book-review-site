@@ -19,4 +19,22 @@ class BookController extends Controller
         }
         return $book;
     }
+
+    public function searchBook(Request $request) {
+        $query = $request->input('query');
+        $results = BookModel::where('book_title', 'like', '%'.$query.'%')->get();
+        if (count($results)) {
+            $data = [
+                'results' => $results,
+                'message' => 'Results found for "'.$query.'".',
+            ];
+            return view('searchbookpage', $data);
+        } else {
+            $data = [
+                'message' => 'No results found for "'.$query.'".',
+            ];
+            return view('searchbookpage', $data);
+        }
+    }
+
 }

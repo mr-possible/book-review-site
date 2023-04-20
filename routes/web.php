@@ -9,12 +9,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/searchbook', function () {
+    return view('searchbookpage');
+});
+
+Route::get('/readReviewPage', function () {
+    return view('readreviewpage');
+});
+
+Route::get('/submitReviewPage', function () {
+    return view('submitreviewpage');
+});
+
+//UserController - Related Endpoints
 Route::get('/users', [UserController::class, 'index']);
 
+//BookController - Related Endpoints
 Route::get('/books', [BookController::class, 'index']);
-
 Route::get('/books/{book_id}', [BookController::class, 'getBookInfo']);
+Route::post('/search', [BookController::class, 'searchBook']);
 
+//BookReviewController - Related Endpoints
 Route::get('/bookreviews', [BookReviewController::class, 'index']);
-
 Route::get('/bookreviews/{book_id}', [BookReviewController::class, 'getBookReview']);
