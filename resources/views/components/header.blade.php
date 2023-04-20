@@ -1,3 +1,4 @@
+<html>
 <head>
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
 </head>
@@ -14,3 +15,4 @@
     </div>
   </nav>
 </header>
+</html>
