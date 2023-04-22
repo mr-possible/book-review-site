@@ -15,7 +15,6 @@ class BookReviewModel extends Model
         'book_review_rating',
         'book_id',
         'user_id',
-        'book_review_date',
         'book_review_upvotes',
         'book_review_downvotes',
     ];
