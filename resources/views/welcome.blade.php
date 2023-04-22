@@ -32,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title">Submit a Review</h5>
                 <p class="card-text">Share your thoughts and contribute to our community of book lovers.</p>
-                <a href="#" class="btn btn-primary">Submit a Review</a>
+                <a href="/submitreview" class="btn btn-primary">Submit a Review</a>
             </div>
             </div>
         </div>

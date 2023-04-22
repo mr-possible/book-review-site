@@ -1,0 +1,34 @@
+.user-review-form {
+  background-color: #f7f7f7;
+  padding: 10px;
+  min-height: 50vh;
+}
+
+.user-review-form h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.user-review-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-review-form textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.user-review-form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.user-review-form input[type="submit"]:hover {
+  background-color: #0069d9;
+}

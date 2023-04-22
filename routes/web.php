@@ -17,7 +17,7 @@ Route::get('/readreview', function () {
     return view('readreviewpage');
 });
 
-Route::get('/submitReviewPage', function () {
+Route::get('/submitreview', function () {
     return view('submitreviewpage');
 });
 
@@ -33,3 +33,6 @@ Route::post('/search', [BookController::class, 'searchBook']);
 Route::get('/bookreviews', [BookReviewController::class, 'index']);
 Route::get('/bookreviews/{book_id}', [BookReviewController::class, 'getBookReview']);
 Route::post('/readreview', [BookReviewController::class, 'searchBook']);
+Route::match(['get', 'post'], '/searchbookForReview', [BookReviewController::class, 'searchBookForSubmitReview']);
+Route::post('/store-review', [BookReviewController::class, 'storeUserReview']);
+
