@@ -13,7 +13,7 @@ Route::get('/searchbook', function () {
     return view('searchbookpage');
 });
 
-Route::get('/readReviewPage', function () {
+Route::get('/readreview', function () {
     return view('readreviewpage');
 });
 
@@ -32,3 +32,4 @@ Route::post('/search', [BookController::class, 'searchBook']);
 //BookReviewController - Related Endpoints
 Route::get('/bookreviews', [BookReviewController::class, 'index']);
 Route::get('/bookreviews/{book_id}', [BookReviewController::class, 'getBookReview']);
+Route::post('/readreview', [BookReviewController::class, 'searchBook']);

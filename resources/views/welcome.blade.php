@@ -23,7 +23,7 @@
             <div class="card-body">
                 <h5 class="card-title">Read a Review</h5>
                 <p class="card-text">Read reviews of popular books and discover new titles.</p>
-                <a href="#" class="btn btn-primary">Read Reviews</a>
+                <a href="/readreview" class="btn btn-primary">Read Reviews</a>
             </div>
             </div>
         </div>
