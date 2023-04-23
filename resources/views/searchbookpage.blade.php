@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/searchbookpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/book.css') }}">
 </head>
 
 @section('title', 'Book Review Site - Search')
@@ -18,19 +19,44 @@
     @if(isset($results) && count($results))
       <ul>
         @foreach($results as $result)
-          <div class="book-container">
-      <img src="book-thumbnail.jpg" alt="Book Thumbnail">
-      <div class="book-info">
-        <h2>{{ $result->book_title }}</h2>
-        <h5>Author: {{ $result->book_author }}</h5>
-        <h4><p>{{ $result->book_description }}</p></h4>
-        <h5>Publisher : {{ $result->book_publisher }}</h5>
-        <h5>Price: ${{ $result->book_price }}</h5>
-        <h5>ISBN: {{ $result->book_isbn }}</h5>
-        <h5>No of Pages: {{ $result->book_pagecount }}</h5>
-        <h5>Language: {{ $result->book_language }}</h5>
-      </div>
-      @endforeach
+          <div class="book-info">
+            <div class="book-card">
+              <div class="cover">
+                <img src="#" alt="Sample Image">
+              </div>
+              <div class="main">
+                <p class="title"><strong>{{ $result->book_title }}</strong></p>
+              </div>
+            </div>
+            <div class="book-detail-info">
+              <p>
+                <strong>Written By: </strong>
+                <span>{{ $result->book_author }}</span>
+              </p>
+              <p>
+                <strong>Publisher: </strong>
+                <span>{{ $result->book_publisher }}</span>
+              </p>
+              <p>
+                <strong>ISBN: </strong>
+                <span>{{ $result->book_isbn }}</span>
+              </p>
+              <p>
+                <strong>No of Pages: </strong>
+                <span>{{ $result->book_pagecount }}</span>
+              </p>
+              <p>
+                <strong>Price: </strong>
+                <span>&#163;{{ $result->book_price }}</span>
+              </p>
+              <p>
+                <strong>Description: </strong>
+                <span>{{ $result->book_description }}</span>
+              </p>
+            </div>
+          </div>
+          </div>
+        @endforeach
       </ul>
     @elseif(isset($message))
       <p>{{ $message }}</p>

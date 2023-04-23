@@ -1,7 +1,7 @@
 .container {
-  max-width: 600px;
+  max-width: 910px;
   margin: 0 auto;
-  text-align: center;
+  align-items: center;
 }
 
 .search-form {
@@ -27,34 +27,5 @@ button[type="submit"] {
 }
 
 .search-results {
-  margin-top: 50px;
-}
-
-.book-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.book-container img {
-  width: 100px;
-  height: 150px;
-  margin-right: 20px;
-}
-
-.book-info h2 {
-  margin-top: 0;
-}
-
-.book-info p {
-  margin-bottom: 10px;
-}
-
-.book-info button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  margin-top: 30px;
 }
