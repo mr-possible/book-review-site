@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/book.css') }}">
     <link rel="stylesheet" href="{{ asset('css/review.css') }}">
     <link rel="stylesheet" href="{{ asset('css/search-book.css') }}">
+    <livewire:scripts />
 </head>
 
 @section('title', 'Book Review Site - Read Review')

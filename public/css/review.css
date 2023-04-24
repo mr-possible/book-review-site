@@ -37,3 +37,31 @@ ul {
 	-moz-border-radius: 0 0 4px 4px;
 	border-radius: 0 0 4px 4px;
 }
+
+/** For Upvotes */
+.upvote-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 1;
+	color: #555;
+	transition: color 0.2s ease-in-out;
+}
+
+.upvote-button:hover {
+	color: rgb(10, 138, 74);
+}
+
+.upvote-icon {
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+}
+
+.upvote-count {
+	margin-left: 4px;
+}

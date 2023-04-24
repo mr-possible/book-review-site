@@ -11,7 +11,7 @@ class BookReviewComment extends Component
         return view('livewire.book-review-comment');
     }
 
-    public $result;
+    public $review;
 
     public function mount($review) {
         $this->review = $review;
