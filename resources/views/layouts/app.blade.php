@@ -6,11 +6,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
 </head>
 <body>
-    @include('components.header')
+    @livewire('header')
     @yield('content')
-    @include('components.footer')
+    @livewire('footer')
 </body>
 </html>

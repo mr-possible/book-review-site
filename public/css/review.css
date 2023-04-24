@@ -1,0 +1,39 @@
+a {
+  color: #03658c;
+  text-decoration: none;
+}
+
+ul {
+ list-style-type: disc;
+}
+
+.comments-container {
+	max-width: 910px;
+  max-height: 1000px;
+}
+
+.comments-container h1 {
+	font-size: 35px;
+	color: #283035;
+	font-weight: 400;
+}
+
+.comments-container h1 a {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.comment-box {
+  box-shadow: 0 0 3px #ded7d7;
+	border-radius: 5px;
+}
+
+.comment-box .comment-content {
+	background: #ece8e8;
+	padding: 2px;
+	font-size: 15px;
+	color: #595959;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}

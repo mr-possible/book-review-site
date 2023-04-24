@@ -1,0 +1,21 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 6px 0 0 5px;
+  border: 2px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border-radius: 0 6px 6px 0;
+  background-color: #2a7ebe;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

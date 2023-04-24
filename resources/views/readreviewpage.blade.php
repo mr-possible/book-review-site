@@ -2,6 +2,9 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/searchbookpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/book.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/review.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/search-book.css') }}">
 </head>
 
 @section('title', 'Book Review Site - Read Review')
@@ -10,31 +13,31 @@
 <h1>Read A Review</h1>
 <div class="container">
   <form action="/readreview" method="POST" class="search-form">
-    @csrf
-    <input type="text" name="query" placeholder="Search a book to read it's review">
-    <button type="submit">Search</button>
+    @livewire('search-book')
   </form>
   <div class="search-results">
-    <!-- Fugit saepe et et. -->
     @if(isset($results) && count($results))
       <ul>
         @foreach($results as $result)
-          <div class="book-container">
-            <img src="book-thumbnail.jpg" alt="Book Thumbnail">
-            <div class="book-info">
-            @if(count($result->reviews))
-              @foreach($result->reviews as $review)
-                <p>{{ $review->book_review_title }}</p>
-                <p>{{ $review->book_review_body }}</p>
-                <p>Posted On: {{ $review->book_review_date }}</p>
-                <p>Upvotes: {{ $review->book_review_upvotes }}</p>
-                <p>Downvotes: {{ $review->book_review_downvotes }}</p>
-                <p>Posted By: {{ $review->user->name }}</p>
-              @endforeach
-            @else
-              <h4>No reviews yet</h4>
-            @endif
+          <div class="book-info">
+            @livewire('book-card', ['result' => $result])
+            @livewire('book-detail-info', ['result' => $result])
           </div>
+            @if(count($result->reviews))
+              <div class="comments-container">
+                <hr>
+                <h1><strong>Reviews</strong></h1>
+                <ul id="comments-list" class="comments-list">
+                @foreach($result->reviews as $review)
+                    <li>
+                      @livewire('book-review-comment', ['review' => $review])
+                    </li>
+                @endforeach
+                </ul>
+              </div>
+            @else
+              <h1><strong>No Reviews Yet!</strong></h1>
+            @endif
         @endforeach
       </ul>
     @elseif(isset($message))
