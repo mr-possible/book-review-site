@@ -13,12 +13,7 @@ return new class extends Migration
     {
         Schema::create('book_review_upvotes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('review_id');
-            $table->integer('upvotes')->default(0);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('review_id')->references('id')->on('book_review_models')->onDelete('cascade');
         });
     }
 

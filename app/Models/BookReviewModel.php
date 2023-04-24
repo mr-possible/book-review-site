@@ -30,4 +30,12 @@ class BookReviewModel extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * One Book Review can have many upvotes.
+     */
+    public function bookReviewUpvotes()
+    {
+        return $this->hasMany(BookReviewUpvoteModel::class);
+    }
 }
