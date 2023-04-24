@@ -14,9 +14,7 @@ class BookReviewModel extends Model
         'book_review_body',
         'book_review_rating',
         'book_id',
-        'user_id',
-        'book_review_upvotes',
-        'book_review_downvotes',
+        'user_id'
     ];
 
     /**
