@@ -4,12 +4,14 @@ a {
 }
 
 ul {
- list-style-type: disc;
+ list-style-type: square;
 }
 
 .comments-container {
+	display: flex;
+	justify-content: space-evenly;
 	max-width: 910px;
-  max-height: 1000px;
+	margin-top: -10px;
 }
 
 .comments-container h1 {
@@ -25,12 +27,16 @@ ul {
 
 .comment-box {
   box-shadow: 0 0 3px #ded7d7;
-	border-radius: 5px;
+	border-radius: 4px;
+}
+
+ul#comments-list li:last-child {
+	margin-bottom: 65px;
 }
 
 .comment-box .comment-content {
 	background: #ece8e8;
-	padding: 2px;
+	padding: 1px;
 	font-size: 15px;
 	color: #595959;
 	-webkit-border-radius: 0 0 4px 4px;

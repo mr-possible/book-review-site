@@ -25,8 +25,8 @@
           </div>
         @endforeach
       </ul>
+      <h1><strong>Add a review</strong></h1>
       <div class="user-review-form">
-      <h3>Add a review</h3>
         <form action="/store-review" id="user-review-form" method="POST">
           @livewire('add-review', ['result' => $result])
           <button type="submit">Submit Review</button>
@@ -38,3 +38,13 @@
   </div>
 </div>
 @endsection
+
+
+
+
+
+
+
+
+
+

@@ -24,21 +24,21 @@
             @livewire('book-card', ['result' => $result])
             @livewire('book-detail-info', ['result' => $result])
           </div>
-            @if(count($result->reviews))
-              <div class="comments-container">
-                <hr>
-                <h1><strong>Reviews</strong></h1>
-                <ul id="comments-list" class="comments-list">
+          @if(count($result->reviews))
+            <hr>
+            <h1><strong>Reviews</strong></h1>
+            <div class="comments-container">
+              <ul id="comments-list" class="comments-list">
                 @foreach($result->reviews as $review)
                     <li>
                       @livewire('book-review-comment', ['review' => $review])
                     </li>
                 @endforeach
-                </ul>
-              </div>
-            @else
-              <h1><strong>No Reviews Yet!</strong></h1>
-            @endif
+              </ul>
+            </div>
+          @else
+            <h1><strong>No Reviews Yet!</strong></h1>
+          @endif
         @endforeach
       </ul>
     @elseif(isset($message))

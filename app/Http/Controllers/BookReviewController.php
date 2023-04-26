@@ -71,8 +71,6 @@ class BookReviewController extends Controller
         $bookReview->book_review_rating = $validatedData['review-rating'];
         $bookReview->book_review_title = $validatedData['review-title'];
         $bookReview->book_review_body = $validatedData['review-body'];
-        $bookReview->book_review_upvotes = 0;   //initially it will always be 0
-        $bookReview->book_review_downvotes = 0;   //initially it will always be 0
         $bookReview->save();
         return redirect('/submitreview')->with('success', 'Your review has been submitted successfully!');
     }

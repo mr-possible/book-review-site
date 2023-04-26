@@ -16,8 +16,6 @@ return new class extends Migration
             $table->text('book_review_body');
             $table->integer('book_review_rating');
             $table->date('book_review_date');
-            $table->integer('book_review_upvotes')->default(0);
-            $table->integer('book_review_downvotes')->default(0);
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('book_id')->references('id')->on('book_models')->onUpdate('cascade')->onDelete('cascade');
