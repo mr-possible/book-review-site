@@ -45,10 +45,12 @@ ul#comments-list li:last-child {
 }
 
 /** For Upvotes */
-.upvote-button {
+.upvote-container {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+}
+
+.upvote-button {
 	background: none;
 	border: none;
 	cursor: pointer;

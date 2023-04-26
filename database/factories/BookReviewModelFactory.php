@@ -28,9 +28,6 @@ class BookReviewModelFactory extends Factory
             'book_review_title' => fake()->sentence(),
             'book_review_body' => fake()->paragraph(),
             'book_review_rating' => fake()->numberBetween(1, 5),
-            'book_review_date' => fake()->date(),
-            'book_review_upvotes' => fake()->numberBetween(0, 100),
-            'book_review_downvotes' => fake()->numberBetween(0, 100),
             'book_id' => fake()->randomElement($db_book_ids),
             'user_id' => fake()->randomElement($db_user_ids),
         ];
