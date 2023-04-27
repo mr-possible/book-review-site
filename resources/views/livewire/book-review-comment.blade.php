@@ -12,7 +12,7 @@
         </div>
         <div class="comment-content">
           <p>{{ $review->book_review_body }}</p>
-          @livewire('upvote-component', ['review' => $review, 'user_id' => 2])
+          @livewire('upvote-component', ['review' => $review, 'user_id' => 4])
         </div>
     </div>
 </div>

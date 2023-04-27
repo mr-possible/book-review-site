@@ -30,7 +30,7 @@
             <div class="comments-container">
               <ul id="comments-list" class="comments-list">
                 @foreach($result->reviews as $review)
-                    <li>
+                    <li wire:key={{ $review->id }}>
                       @livewire('book-review-comment', ['review' => $review])
                     </li>
                 @endforeach
