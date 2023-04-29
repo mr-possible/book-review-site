@@ -6,12 +6,21 @@
     <header class="header">
     <nav class="nav">
         <div class="nav__logo">
-            <a href="/">Book Reviews</a>
+            Book Reviews
         </div>
         <div class="nav__links">
-            <a href="/">Home</a>
-            <a href="/my-profile">My Profile</a>
-            <a href="/about">About</a>
+            @if (Route::has('login'))
+                    @auth
+                        <a href="/home">Home</a>
+                        <a href="/logout">Logout</a>
+                    @else
+                        <a href="/login">Log In</a>
+                    @if (Route::has('register'))
+                        <a href="/register">Register</a>
+                    @endif
+                    @endauth
+                </div>
+            @endif
         </div>
     </nav>
     </header>

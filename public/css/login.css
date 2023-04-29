@@ -1,0 +1,46 @@
+.user-login-heading {
+  margin-top: 70px;
+}
+
+.user-login-container {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form-holder {
+  width: 100%;
+  max-width: 400px;
+}
+
+.user-login-form-group {
+  margin-bottom: 15px;
+}
+
+.user-login-form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.user-login-form-submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.user-login-form-submit-button:hover {
+  background-color: #0069d9;
+}
+
+.text-danger {
+  color: red;
+}
