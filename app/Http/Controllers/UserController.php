@@ -7,8 +7,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index() {
-        $usernames = User::all()->pluck('name');
-        return view('users.index', ['usernames' => $usernames]);
+    public function profile() {
+        return view('livewire.user-profile');
     }
 }

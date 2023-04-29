@@ -12,6 +12,7 @@
             @if (Route::has('login'))
                     @auth
                         <a href="/home">Home</a>
+                        <a href="/my-profile">My Profile</a>
                         <a href="/logout">Logout</a>
                     @else
                         <a href="/login">Log In</a>
