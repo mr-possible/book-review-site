@@ -64,15 +64,16 @@ class BookReviewController extends Controller
             'review-rating' => 'required|integer|max:10',
             'review-body' => 'required|string',
         ]);
-    
-        $bookReview = new BookReviewModel();
-        $bookReview->book_id = $validatedData['book_id'];
-        $bookReview->user_id = $validatedData['user_id']; // 1 for now, work on this later. use the id of logged in user. it was $validatedData['user_id']
-        $bookReview->book_review_rating = $validatedData['review-rating'];
-        $bookReview->book_review_title = $validatedData['review-title'];
-        $bookReview->book_review_body = $validatedData['review-body'];
-        $bookReview->save();
+
+        BookReviewModel::create(
+            [
+                'book_id' => $validatedData['book_id'],
+                'user_id' => $validatedData['user_id'],
+                'book_review_title' => $validatedData['review-title'],
+                'book_review_rating' => $validatedData['review-rating'],
+                'book_review_body' => $validatedData['review-body'],
+            ]
+        );
         return redirect('/submitreview')->with('success', 'Your review has been submitted successfully!');
     }
-    
 }

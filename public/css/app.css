@@ -1,6 +1,5 @@
 html,
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  height: 100%;
-  margin: 0;
+  height: 100vh;
 }

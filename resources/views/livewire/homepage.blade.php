@@ -1,28 +1,54 @@
 @extends('layouts.app')
 
-<head>
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-</head>
-
 @section('title', 'Book Review Site')
 
 @section('content')
 <h3>Welcome {{ Auth::user()->name }}</h3>
-<div class="dashboard-main-container">
-    <div class="dashboard-main-card">
-        <h5 class="card-title">Search a Book</h5>
-        <p class="card-text">Find and search for books in our extensive library collection.</p>
-        <a class="card-link" href="/searchbook" class="btn btn-primary">Search</a>
+<div class="dashboard-main-container columns is-multiline">
+  <div class="dashboard-main-card column is-one-third">
+    <div class="card">
+      <header class="card-header has-text-centered">
+        <h5 class="card-header-title is-size-2">Search a Book</h5>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Find and search for books in our extensive library collection.
+        </div>
+      </div>
+      <footer class="card-footer has-text-centered">
+        <a href="/searchbook" class="card-footer-item">Search</a>
+      </footer>
     </div>
-    <div class="dashboard-main-card">
-        <h5 class="card-title">Read a Review</h5>
-        <p class="card-text">Read reviews of popular books and discover new titles.</p>
-        <a class="card-link" href="/readreview" class="btn btn-primary">Read</a>
+  </div>
+  <div class="dashboard-main-card column is-one-third">
+    <div class="card">
+      <header class="card-header has-text-centered">
+        <h5 class="card-header-title is-size-2">Read a Review</h5>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Read reviews of popular books and discover new titles.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="/readreview" class="card-footer-item">Read</a>
+      </footer>
     </div>
-    <div class="dashboard-main-card">
-        <h5 class="card-title">Submit a Review</h5>
-        <p class="card-text">Share your thoughts and contribute to our community of book lovers.</p>
-        <a class="card-link" href="/submitreview" class="btn btn-primary">Submit</a>
+  </div>
+  <div class="dashboard-main-card column is-one-third">
+    <div class="card">
+      <header class="card-header">
+        <h5 class="card-header-title is-size-2">Submit a Review</h5>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Share your thoughts and contribute to our community of book lovers.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="/submitreview" class="card-footer-item">Submit</a>
+      </footer>
     </div>
+  </div>
 </div>
 @endsection

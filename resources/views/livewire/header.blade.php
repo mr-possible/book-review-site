@@ -1,23 +1,27 @@
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-@endsection
-
-<div>
-    <header class="header">
-    <nav class="nav">
-        <div class="nav__logo">
-            Book Reviews
+<div class="container-fluid">
+    <header class="header" style="background: linear-gradient(to right, #00c6ff, #0072ff);">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item is-size-2 has-text-white" href="#">
+                <strong>Book Review Website</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div class="nav__links">
-            @if (Route::has('login'))
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                @if (Route::has('login'))
                     @auth
-                        <a href="/home">Home</a>
-                        <a href="/my-profile">My Profile</a>
-                        <a href="/logout">Logout</a>
+                        <a href="/home" class="navbar-item has-text-white">Home</a>
+                        <a href="/my-profile" class="navbar-item has-text-white">My Profile</a>
+                        <a href="/logout" class="navbar-item has-text-white">Logout</a>
                     @else
-                        <a href="/login">Log In</a>
+                        <a href="/login" class="navbar-item has-text-white">Log In</a>
                     @if (Route::has('register'))
-                        <a href="/register">Register</a>
+                        <a href="/register" class="navbar-item has-text-white">Register</a>
                     @endif
                     @endauth
                 </div>

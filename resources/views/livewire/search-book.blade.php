@@ -1,8 +1,14 @@
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/search-book.css') }}">
-@endsection
-
-
+<div class="container is-max-widescreen">
 @csrf
-<input type="text" name="query" placeholder="Search a book" />
-<button type="submit">Search</button>
+  <div class="field">
+    <label class="label">Search A Book</label>
+    <div class="control">
+      <input class="input" type="text" name="query" placeholder="Search a book" />
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary" type="submit">Search</button>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,16 @@
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/book.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/review.css') }}">
-@endsection
-
-<div class="comment-main-level">
-    <div class="comment-box">
-        <div class="comment-head">
-          <i class="fa fa-heart"></i>
-          <h4>{{ $review->book_review_title }}</h4>
-          <span>By <i>{{ $review->user->name }}</i> - {{ $review->created_at }}</span>
-        </div>
-        <div class="comment-content">
-          <p>{{ $review->book_review_body }}</p>
-          @livewire('upvote-component', ['review' => $review, 'user_id' => 4])
-        </div>
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{ $review->book_review_title }}</strong>
+          <br>
+          <small>By {{ $review->user->name }} - {{ $review->created_at }}</small>
+          <br>
+          {{ $review->book_review_body }}
+        </p>
+      </div>
     </div>
+    @livewire('upvote-component', ['review' => $review, 'user_id' => Auth::user()->id])
+  </article>
 </div>

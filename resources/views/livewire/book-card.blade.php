@@ -1,12 +1,12 @@
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/book.css') }}">
-@endsection
-
-<div class="book-card">
-    <div class="cover">
-    <img src="#" alt="Sample Image">
+<div class="column is-one-third">
+  <div class="card book-card">
+    <div class="card-image">
+      <figure class="image is-3by1">
+        <img src="#" alt="Book Cover">
+      </figure>
     </div>
-    <div class="main">
-    <p class="title"><strong>{{ $result->book_title }}</strong></p>
+    <div class="card-content">
+      <p class="title is-3">{{ $result->book_title }}</p>
     </div>
+  </div>
 </div>
