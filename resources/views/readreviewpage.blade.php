@@ -27,7 +27,7 @@
             <ul>
               @foreach($result->reviews as $review)
                   <li wire:key={{ $review->id }}>
-                    @livewire('book-review-comment', ['review' => $review])
+                    @livewire('book-review', ['review' => $review])
                   </li>
                   <br />
               @endforeach

@@ -41,6 +41,6 @@ class BookReviewModel extends Model
 
     public function comments()
     {
-        return $this->hasMany(BookReviewCommentModel::class);
+        return $this->hasMany(BookReviewCommentModel::class, 'review_id');
     }
 }

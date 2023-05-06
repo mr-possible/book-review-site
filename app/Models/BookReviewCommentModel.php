@@ -9,7 +9,7 @@ class BookReviewCommentModel extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['comment'];
+    protected $fillable = ['review_id', 'user_id', 'comment'];
 
     public function user()
     {

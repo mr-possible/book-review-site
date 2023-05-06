@@ -55,25 +55,4 @@ class BookReviewController extends Controller
             return view('submitreviewpage', $data);
         }
     }
-
-    public function storeUserReview(Request $request) {
-        $validatedData = $request->validate([
-            'book_id' => 'required|integer',
-            'user_id' => 'required|integer', 
-            'review-title' => 'required|string|max:255',
-            'review-rating' => 'required|integer|max:10',
-            'review-body' => 'required|string',
-        ]);
-
-        BookReviewModel::create(
-            [
-                'book_id' => $validatedData['book_id'],
-                'user_id' => $validatedData['user_id'],
-                'book_review_title' => $validatedData['review-title'],
-                'book_review_rating' => $validatedData['review-rating'],
-                'book_review_body' => $validatedData['review-body'],
-            ]
-        );
-        return redirect('/submitreview')->with('success', 'Your review has been submitted successfully!');
-    }
 }
