@@ -31,8 +31,5 @@ class BookReviewModelFactory extends Factory
             'book_id' => fake()->randomElement($db_book_ids),
             'user_id' => fake()->randomElement($db_user_ids),
         ];
-
-        // On line 21 and 22 - we are getting id of existing users and existing books from the database.
-        // On line 34 and 35 - we are seeding random relationships from existing models - User & BookModel.
     }
 }
