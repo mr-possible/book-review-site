@@ -3,9 +3,14 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ $review->book_review_title }}</strong>
-          <br>
-          <small>By {{ $review->user->name }} - {{ $review->created_at }}</small>
+          <strong>{{ $review->book_review_title }}</strong>  
+          By
+          @if($review->user->id == auth()->user()->id)
+            You
+          @else
+            <a href="{{ route('other-profile', ['user_id' => $review->user->id]) }}">{{ $review->user->name }}</a>
+          @endif
+            - {{ $review->created_at }}
           <br>
           {{ $review->book_review_body }}
         </p>

@@ -9,7 +9,13 @@
         <p>
           @if($review->comments->count() > 0)
             @foreach($review->comments as $comment)
-              <small>{{ $comment->user->name }} on {{ $comment->created_at }} commented:</small>  
+              <small>
+                @if($comment->user->id == auth()->user()->id)
+                You
+                @else
+                  <a href="{{ route('other-profile', ['user_id' => $comment->user->id]) }}">{{ $comment->user->name }}</a>
+                @endif
+                on {{ $comment->created_at }} commented:</small>  
               <div class="comment has-background-light">
                   {{ $comment->comment }}
               </div>

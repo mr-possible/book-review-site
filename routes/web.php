@@ -23,7 +23,8 @@ Route::group(
 Route::group(
     ['middleware' => 'auth'], function() {
         Route::get('/home', [AuthController::class, 'home'])-> name('home');
-        Route::get('/my-profile', [UserController::class, 'profile'])-> name('my-profile');
+        Route::get('/my-profile', [UserController::class, 'my_profile'])-> name('my-profile');
+        Route::get('/profile/{user_id}', [UserController::class, 'others_profile'])->name('other-profile');
         Route::get('/logout', [AuthController::class, 'logout'])-> name('logout');
         Route::get('/searchbook', function () {
             return view('searchbookpage');
