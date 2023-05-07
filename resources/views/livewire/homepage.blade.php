@@ -3,7 +3,7 @@
 @section('title', 'Book Review Site')
 
 @section('content')
-<h3>Welcome {{ Auth::user()->name }}</h3>
+<h1 class="title is-1 has-text-centered">Welcome <strong>{{ Auth::user()->name }}</strong> !</h1>
 <div class="dashboard-main-container columns is-multiline">
   <div class="dashboard-main-card column is-one-third">
     <div class="card">
