@@ -8,21 +8,21 @@
     <div class="box">
       <div class="columns is-centered">
         @if(Route::currentRouteName() === 'my-profile')
-          <div clss="column is-one-fifth">
-            <figure class="image is-128x128">
+          <div class="column is-one-fifth">  
+            <figure class="image is-1by1">
               <!-- Add 'upload image' feature later -->
-              <img src="#" alt="{{Auth::user()->name }}">
+              <img class="is-rounded" src="{{ asset('images/dashboard-read-review.jpg') }}" alt="{{Auth::user()->name }}">
             </figure>
-          </div>  
+          </div>
           <div class="column">
             <h1 class="title is-4">{{ Auth::user()->name }}</h1>
             <h2 class="subtitle is-6">{{ Auth::user()->email }}</h2>
           </div>
         @else
           <div class="column is-one-fifth">
-            <figure class="image is-128x128">
+            <figure class="image is-1by1">
               <!-- Add 'upload image' feature later -->
-              <img src="#" lt="{{ $user->name }}">
+              <img class="is-rounded" src="{{ asset('images/dashboard-read-review.jpg') }}" alt="{{Auth::user()->name }}">
             </figure>
           </div>
           <div class="column">
