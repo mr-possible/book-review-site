@@ -1,5 +1,4 @@
-<div class="container-fluid">
-    <header class="header" style="background: linear-gradient(to right, #00c6ff, #0072ff);">
+<header class="header" style="background: linear-gradient(to right, #00c6ff, #0072ff);">
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item is-size-2 has-text-white" href="#">
@@ -28,5 +27,4 @@
             @endif
         </div>
     </nav>
-    </header>
-</div>
+</header>
