@@ -12,7 +12,7 @@
           @endif
             - {{ $review->created_at }}
           <br>
-          {{ $review->book_review_body }}
+          <span class="subtitle is-3">&ldquo;</span>{{ $review->book_review_body }}<span class="subtitle is-3">&rdquo;</span>
         </p>
       </div>
     </div>

@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class BookReviewComment extends Component
 {
-    public $review, $updated_comments, $comment;
+    public $review, $comment;
 
     protected $rules = [
         'comment' => 'required',
@@ -43,7 +43,29 @@ class BookReviewComment extends Component
         ]);
 
         $this->comment = '';
-
         return $this->getReviews();
     }
+
+    public function deleteComment($id)
+    {
+        $comment = BookReviewCommentModel::findorFail($id);
+
+        if (\Auth::id() !== $comment->user_id) {
+            return;
+        }
+
+        $comment->delete();
+        return $this->getReviews();
+    }
+
+    public function editComment($id)
+    {
+        // TODO
+    }
+
+    public function updateComment($id)
+    {
+        // TODO
+    }
+
 }
