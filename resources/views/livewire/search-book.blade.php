@@ -3,7 +3,7 @@
   <div class="field">
     <label class="label">Search A Book</label>
     <div class="control">
-      <input class="input" type="text" name="query" placeholder="Search a book" />
+      <input class="input" type="text" name="query" placeholder="Search a book" required/>
     </div>
   </div>
   <div class="field is-grouped">
