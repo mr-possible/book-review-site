@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\UserRegistered;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -52,6 +53,8 @@ class AuthController extends Controller
 
         // Make the user login directly after successful registration 
         if(\Auth::attempt($request->only('email', 'password'))) {
+            //Send mail to successfully registered user
+            \Mail::to('to@example.com')->send(new UserRegistered());
             return redirect('home');
         } else {
             return redirect('user-register')->withError('An Error Occured! Please contact the Administrator.');
