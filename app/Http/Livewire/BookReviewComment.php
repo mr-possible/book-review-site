@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\NewComment;
 use App\Models\BookReviewCommentModel;
 use App\Models\BookReviewModel;
+use App\Models\User;
 use Livewire\Component;
 
 class BookReviewComment extends Component
@@ -43,6 +45,25 @@ class BookReviewComment extends Component
         ]);
 
         $this->comment = '';
+
+        /**
+         * Send mail to the review owner
+         */
+        $review = BookReviewModel::findOrFail($this->review->id);
+        if ($review) {
+            $user = $review->user;
+            if ($user) {
+                $userEmail = $user->email;
+                \Mail::to($userEmail) //send this to the user who posted the review
+                    ->send(
+                        new NewComment(
+                            User::findOrFail(\Auth::id()),
+                            $review,
+                            BookReviewCommentModel::latest('created_at')->first()
+                        )
+                    );
+            }
+        }
         return $this->getReviews();
     }
 
