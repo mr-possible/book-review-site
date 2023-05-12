@@ -11,7 +11,7 @@
             @else
               <a href="{{ route('other-profile', ['user_id' => $comment->user->id]) }}">{{ $comment->user->name }}</a>
             @endif
-            on {{ $comment->created_at }} commented:
+            on {{ $comment->created_at->toFormattedDateString() }} commented:
           </small>  
           <div class="comment box py-1">
               <i>{{ $comment->comment }}</i>

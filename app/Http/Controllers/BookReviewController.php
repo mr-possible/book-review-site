@@ -23,11 +23,11 @@ class BookReviewController extends Controller
 
     public function searchBook(Request $request) {
         $query = $request->input('query');
-        $results = BookModel::with('reviews')->where('book_title', 'like', '%'.$query.'%')->get();
-    
-        if (count($results)) {
+        $result = BookModel::with('reviews')->where('book_title', 'like', '%'.$query.'%')->first();
+
+        if ($result) {
             $data = [
-                'results' => $results,
+                'result' => $result,
                 'message' => 'Results found for "'.$query.'".',
             ];
             return view('readreviewpage', $data);

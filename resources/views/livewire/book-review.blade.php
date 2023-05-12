@@ -10,7 +10,7 @@
           @else
             <a href="{{ route('other-profile', ['user_id' => $review->user->id]) }}">{{ $review->user->name }}</a>
           @endif
-            - {{ $review->created_at }}
+            - {{ $review->created_at->toFormattedDateString() }}
           <br>
           <span class="subtitle is-3">&ldquo;</span>{{ $review->book_review_body }}<span class="subtitle is-3">&rdquo;</span>
         </p>
