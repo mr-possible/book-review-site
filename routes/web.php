@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenericController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -13,9 +14,7 @@ Route::group(
         Route::post('/user-login', [AuthController::class, 'login'])-> name('user-login')->middleware('throttle:2,1');
         Route::get('/register', [AuthController::class, 'registerform'])-> name('register');
         Route::post('/user-register', [AuthController::class, 'register'])-> name('user-register')->middleware('throttle:2,1');
-        Route::get('/', function () {
-            return view('welcome');
-        });
+        Route::get('/', [GenericController::class, 'greet'])->name('welcome');
     }
 );
 
