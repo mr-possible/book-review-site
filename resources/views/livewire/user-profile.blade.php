@@ -11,7 +11,9 @@
           <div class="column is-one-fifth">  
             <figure class="image is-1by1">
               <!-- Add 'upload image' feature later -->
-              <img class="is-rounded" src="{{ asset('images/dashboard-read-review.jpg') }}" alt="{{Auth::user()->name }}">
+              <img class="is-rounded"
+                    src="{{ asset('images/dashboard-read-review.jpg') }}"
+                    alt="{{Auth::user()->name }}">
             </figure>
           </div>
           <div class="column">
@@ -39,24 +41,24 @@
     </div>
     <div class="box">
       <div class="column is-half is-offset-one-quarter has-text-centered">
-        <h2 class="title is-4">Analytics</h2>
+        <h2 class="title is-3">User Activity Analytics</h2>
       </div>
       <table class="table is-fullwidth">
         <thead>
           <tr>
-            <th>Review Title</th>
-            <th>Review Date</th>
-            <th>Number of Comments</th>
-            <th>Number of Upvotes</th>
+            <th class="has-text-centered">Review Title</th>
+            <th class="has-text-centered">Review Date</th>
+            <th class="has-text-centered">Number of Comments</th>
+            <th class="has-text-centered">Number of Upvotes</th>
           </tr>
         </thead>
         <tbody>
           @foreach($reviews as $review)
           <tr>
-            <td>{{ $review->book_review_title }}</td>
-            <td>{{ $review->created_at }}</td>
-            <td>{{ $review->comments->count() }}</td>
-            <td>{{ $review->bookReviewUpvotes->count() }}</td>
+            <td class="has-text-centered">{{ $review->book_review_title }}</td>
+            <td class="has-text-centered">{{ $review->created_at->toFormattedDateString() }}</td>
+            <td class="has-text-centered">{{ $review->comments->count() }}</td>
+            <td class="has-text-centered">{{ $review->bookReviewUpvotes->count() }}</td>
           </tr>
           @endforeach
         </tbody>
