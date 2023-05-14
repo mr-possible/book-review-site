@@ -66,6 +66,13 @@ class BookReviewController extends Controller
             'review-body' => 'required|string',
         ]);
 
+        // Since image upload is optional, hence, we have kept it outside 'validate'. 
+        $file = $request->hasFile('review-image');
+        $path = null;
+        if ($file) {
+            $newFile = $request->file('review-image');
+            $path = $newFile->store('images');
+        }
         BookReviewModel::create(
             [
                 'book_id' => $validatedData['book_id'],
@@ -73,6 +80,7 @@ class BookReviewController extends Controller
                 'book_review_title' => $validatedData['review-title'],
                 'book_review_rating' => $validatedData['review-rating'],
                 'book_review_body' => $validatedData['review-body'],
+                'image_path' => $path
             ]
         );
         return redirect('/submitreview')->with('success', 'Your review has been submitted successfully!');

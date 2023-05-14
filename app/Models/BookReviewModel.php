@@ -13,6 +13,7 @@ class BookReviewModel extends Model
         'book_review_title',
         'book_review_body',
         'book_review_rating',
+        'image_path',
         'book_id',
         'user_id'
     ];
