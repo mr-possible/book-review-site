@@ -16,18 +16,24 @@
           <div class="comment box py-1">
               <i>{{ $comment->comment }}</i>
               <hr>
-              @if($comment->user->id === auth()->user()->id)
+              @if(Auth::user()->role == "admin")
+                <div class="buttons is-right">
+                    <form wire:submit.prevent="deleteComment({{ $comment->id }})">
+                        <button type="submit" class="button is-danger is-rounded is-small">Delete</button>
+                        <button type="button" class="button is-warning is-rounded is-small">Edit</button>
+                    </form>
+                </div>
+              @elseif($comment->user->id === auth()->user()->id)
                 <div class="buttons is-right">
                   <form wire:submit.prevent="deleteComment({{ $comment->id }})">
-                    @can('delete', $comment)
-                    <button type="submit" class="button is-danger is-rounded is-small">Delete</button>
-                    @endcan
-
-                    @can('edit', $comment)
-                    <button type="button" class="button is-warning is-rounded is-small">Edit</button>
-                    @endcan
+                      @can('delete', $comment)
+                        <button type="submit" class="button is-danger is-rounded is-small">Delete</button>
+                      @endcan
+                      @can('edit', $comment)
+                        <button type="button" class="button is-warning is-rounded is-small">Edit</button>
+                      @endcan
                   </form>
-                </div>     
+                </div>
               @endif
           </div>
         @endforeach

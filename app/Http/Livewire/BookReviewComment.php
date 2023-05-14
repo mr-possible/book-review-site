@@ -71,11 +71,22 @@ class BookReviewComment extends Component
     {
         $comment = BookReviewCommentModel::findorFail($id);
 
-        if (\Auth::id() !== $comment->user_id) {
-            return;
+        if(\Auth::user()->role == 'admin')
+        {
+            $comment->delete();
+            
+        }
+        else
+        {
+            if (\Auth::id() !== $comment->user_id) {
+                return;
+            }
+            else
+            {
+                $comment->delete();
+            }
         }
 
-        $comment->delete();
         return $this->getReviews();
     }
 
