@@ -4,7 +4,14 @@
 
 This web application resonates with a basic book review web applicaiton built using Laravel and PHP. This web application denotes my proof-of-work for the purpose of the Coursework 03 in the CSCM48 module of MSc degree.
 
-## Instructions
+## Tech Stack
+
+- <b>Frontend Stack</b> : Livewire (Component Mgmt System), Bulma CSS (styling), Laravel Blade Template
+- <b>Backend</b>: Laravel 10.1.5 & PHP
+- <b>Database</b>: MySQL
+- <b>Containerization</b>: Docker
+
+## Instructions To Setup
 
 - Once you have openend the project (preferrably in VS Code), then open your Terminal.
 
@@ -12,12 +19,15 @@ This web application resonates with a basic book review web applicaiton built us
 
 - This will ease the process of using sail everytime you want to perform anything further.
 
-- Next, just type `sail up`.
+- Next, just type `sail up -d`.
 
-- This will start all the containers that are provided with laravel project.
+- This will start all the containers that are provided with laravel project in the background.
 
-- Once it is up, it is time to spin up our frontend - For this, open another terminal (without closing the previous one).
+- In the browser, please navigate to `localhost:8500`. The website should be up and running.
 
-- Repeat the alias command.
+## References Used
 
-- Then type `sail npm run dev`. This should spin up the frontend of this project, that is Livewire. (preferrably at http://localhost:8500/).
+HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+Bulma CSS: https://bulma.io/documentation/
+Livewire: https://laravel-livewire.com/docs/2.x/quickstart
+Laravel: https://laravel.com/docs/10.x/readme
