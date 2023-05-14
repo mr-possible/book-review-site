@@ -19,3 +19,21 @@
       <textarea id="review-body" class="textarea" name="review-body" placeholder="Elaborate your review" rows="6" required></textarea>
     </div>
 </div>
+<div class="field">
+    <label class="label">Add an image:</label>
+    <div class="control">
+      <div class="file">
+        <label class="file-label">
+          <input class="file-input" type="file" name="review-image">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Upload an image
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+</div>

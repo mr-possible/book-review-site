@@ -13,6 +13,11 @@
             - {{ $review->created_at->toFormattedDateString() }}
           <br>
           <span class="subtitle is-3">&ldquo;</span>{{ $review->book_review_body }}<span class="subtitle is-3">&rdquo;</span>
+          <div>
+            <figure class="image is-128x128">
+                <img src="{{ Storage::url($review->image_path) }}" />
+            </figure>
+          </div>
         </p>
       </div>
     </div>

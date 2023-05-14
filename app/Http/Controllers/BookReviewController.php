@@ -73,6 +73,7 @@ class BookReviewController extends Controller
             $newFile = $request->file('review-image');
             $path = $newFile->store('images');
         }
+        //dd(asset('/storage/'.$path));
         BookReviewModel::create(
             [
                 'book_id' => $validatedData['book_id'],

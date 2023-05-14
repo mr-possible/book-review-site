@@ -19,7 +19,7 @@
     </ul>
     <hr />
     <p class="title is-2">Add a review</p>
-    <form action="/store-review" id="user-review-form" method="POST">
+    <form action="/store-review" id="user-review-form" method="POST" enctype="multipart/form-data">
       @livewire('add-review', ['result' => $result])
       <div class="field is-grouped">
         <div class="control">
