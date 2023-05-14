@@ -2,7 +2,7 @@
   <div class="card book-card">
     <div class="card-image">
       <figure class="image is-3by1">
-        <img src="#" alt="Book Cover">
+        <img src="{{ asset('images/book.jpeg') }}" alt="Book Cover">
       </figure>
     </div>
     <div class="card-content">
