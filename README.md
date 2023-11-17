@@ -15,11 +15,19 @@ This web application resonates with a basic book review web applicaiton built us
 
 - Once you have openend the project (preferrably in VS Code), then open your Terminal.
 
-- After you have openend the terminal, type `alias sail='./vendor/bin/sail'`.
+- Make sure you have `php` and `composer` installed on your machine.
+
+- Once above is installed, please run `composer install`. This will generate `vendor` folder.
+
+- Open the terminal, type `alias sail='./vendor/bin/sail'`.
 
 - This will ease the process of using sail everytime you want to perform anything further.
 
+- Copy the contents of `.env.example` file into a new `.env` file.
+
 - Next, just type `sail up -d`.
+
+- Run `php artisan migrate`. This should populate your database and make tables.
 
 - This will start all the containers that are provided with laravel project in the background.
 
